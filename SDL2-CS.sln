@@ -1,16 +1,22 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDL2-CS", "SDL2-CS.csproj", "{85480198-8711-4355-830E-72FD794AD3F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{91DADCA5-CD59-4818-A2AC-563AD1905D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VulkanTest", "examples\VulkanTest\VulkanTest.csproj", "{BC1E1929-B3BB-4053-995E-3648548E8B0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{85480198-8711-4355-830E-72FD794AD3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -25,6 +31,24 @@ Global
 		{85480198-8711-4355-830E-72FD794AD3F6}.Release|x64.Build.0 = Release|x64
 		{85480198-8711-4355-830E-72FD794AD3F6}.Release|x86.ActiveCfg = Release|x86
 		{85480198-8711-4355-830E-72FD794AD3F6}.Release|x86.Build.0 = Release|x86
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Release|x64.Build.0 = Release|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BC1E1929-B3BB-4053-995E-3648548E8B0C} = {91DADCA5-CD59-4818-A2AC-563AD1905D45}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = SDL2-CS.csproj
