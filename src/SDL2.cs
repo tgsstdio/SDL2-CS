@@ -5987,7 +5987,8 @@ namespace SDL2
 		{
 			public IntPtr window; // Refers to an HWND
 			public IntPtr hdc; // Refers to an HDC
-		}
+            public IntPtr hinstance; // the window hinstance(>= SDL 2.0.6)
+        }
 
 		[StructLayout(LayoutKind.Sequential)]
 		public struct INTERNAL_winrt_wminfo
