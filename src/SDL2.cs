@@ -26,6 +26,8 @@
  */
 #endregion
 
+// Minor changes 2017 by David Young
+
 #region Using Statements
 using System;
 using System.Runtime.InteropServices;
@@ -248,21 +250,31 @@ namespace SDL2
 
 		#region SDL.h
 
-		public const uint SDL_INIT_TIMER =		0x00000001;
-		public const uint SDL_INIT_AUDIO =		0x00000010;
-		public const uint SDL_INIT_VIDEO =		0x00000020;
-		public const uint SDL_INIT_JOYSTICK =		0x00000200;
-		public const uint SDL_INIT_HAPTIC =		0x00001000;
-		public const uint SDL_INIT_GAMECONTROLLER =	0x00002000;
-		public const uint SDL_INIT_EVENTS =		0x00004000;
-		public const uint SDL_INIT_SENSOR =		0x00008000;
-		public const uint SDL_INIT_NOPARACHUTE =	0x00100000;
+		public const uint SDL_INIT_TIMER =		0x00000001u;
+		public const uint SDL_INIT_AUDIO =		0x00000010u;
+		public const uint SDL_INIT_VIDEO =		0x00000020u;
+		public const uint SDL_INIT_JOYSTICK =		0x00000200u;
+		public const uint SDL_INIT_HAPTIC =		0x00001000u;
+		public const uint SDL_INIT_GAMECONTROLLER =	0x00002000u;
+        public const uint SDL_INIT_EVENTS = 0x00004000u;
+		public const uint SDL_INIT_NOPARACHUTE =	0x00100000u;
 		public const uint SDL_INIT_EVERYTHING = (
-			SDL_INIT_TIMER | SDL_INIT_AUDIO | SDL_INIT_VIDEO |
-			SDL_INIT_EVENTS | SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC |
-			SDL_INIT_GAMECONTROLLER | SDL_INIT_SENSOR
+			SDL_INIT_TIMER | SDL_INIT_AUDIO | SDL_INIT_VIDEO | SDL_INIT_EVENTS |
+            SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC |
+			SDL_INIT_GAMECONTROLLER
 		);
 
+		/// <summary>
+		/// Use this function to initialize the SDL library.
+		/// This must be called before using any other SDL function.
+		/// </summary>
+		/// <param name="flags">subsystem initialization flags; see Remarks for details</param>
+		/// <returns>Returns 0 on success or a negative error code on failure.
+		/// Call <see cref="SDL_GetError()"/> for more information.</returns>
+		/// <remarks>The Event Handling, File I/O, and Threading subsystems are initialized by default.
+		/// You must specifically initialize other subsystems if you use them in your application.</remarks>
+		/// <remarks>Unless the SDL_INIT_NOPARACHUTE flag is set, it will install cleanup signal handlers
+		/// for some commonly ignored fatal signals (like SIGSEGV). </remarks>
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int SDL_Init(uint flags);
 
@@ -982,7 +994,7 @@ namespace SDL2
 		 */
 		public const int SDL_MAJOR_VERSION =	2;
 		public const int SDL_MINOR_VERSION =	0;
-		public const int SDL_PATCHLEVEL =	10;
+		public const int SDL_PATCHLEVEL =	5;
 
 		public static readonly int SDL_COMPILEDVERSION = SDL_VERSIONNUM(
 			SDL_MAJOR_VERSION,
@@ -7092,7 +7104,8 @@ namespace SDL2
 		{
 			public IntPtr window; // Refers to an HWND
 			public IntPtr hdc; // Refers to an HDC
-		}
+            public IntPtr hinstance; // the window hinstance(>= SDL 2.0.6)
+        }
 
 		[StructLayout(LayoutKind.Sequential)]
 		public struct INTERNAL_winrt_wminfo
